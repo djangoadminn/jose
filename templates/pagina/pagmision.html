@@ -1,0 +1,113 @@
+{% load staticfiles %}
+
+{% block block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <meta name="description" content="">
+    
+    <meta name="author" content="">
+    
+    <title>Funda comunal|inicio </title>
+    
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'css/mainmision.css' %}">
+    
+    <link rel="/static/imgs/shortcut icon" href="{% static 'img/logo/venezuela.jpg' %}">
+    <link rel="stylesheet" href="{% static 'cssweb/css/stylemision.css' %}">
+    
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <script src="//use.edgefonts.net/bebas-neue.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/icomoon-social.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <script src="{% static 'js/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""><img src="" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/inicio/">Inicio <i class="fa fa-home"></a></li></i>
+                    <li class="active"><a href="/mision/" >Misión <i class="fa fa-file-text-o"></a></li></i>
+                    <li><a href="/vision/">Visión <i class="fa fa-file-text-o"></a></li></i>
+                    <li><a href="/resena/">Reseña Historica <i class="fa fa-file-text-o"></a></li></i> 
+                    <li><a href="/usuario/login">Acceder <i class="fa fa-unlock-alt"></a></li></i> 
+                    
+                </ul>    
+            </div>
+        </div>
+    <center>
+</header> 
+<div id="container">
+<section id="services" class="section pad-bot5 ">
+<div class="container"> 
+<div class="col-md-offset-3 col-md-6">
+<div class="section-header">
+<div class="wow bounceIn"data-animation-delay="7.8s">
+<div class="wow rotateIn">
+<div class="service-col">
+<div class=""> 
+
+<figure><i class=""></i><label>Misión</label>
+<p>
+El Consejo Comunal del Barrio Nuevas Brisas tiene como misión el ejercicio de la soberanía popular a través de políticas públicas y proyectos orientados a responder a las necesidades, potencialidades y aspiraciones de la comunidad, en la construcción del nuevo modelo de sociedad socialista de igualdad, equidad y justicia social que brinde a los habitantes de la zona la máxima satisfacción a sus necesidades y la máxima felicidad posible.</p>
+</figure>
+ </div>
+         </div>
+    </div>
+</div> 
+  </div>
+</div> 
+  </div>
+
+</div> 
+
+</div>
+        <div class="footer">
+            <div class="container">         
+                <div class="row">     
+             <div class="col-md-12">
+                        <div class="footer-copyright">&copy; 2017  | Programadores | | U.P.T.P .J.J "Montilla"|</c></maquee>| Gonzalez Jasnelvi | | Becerra Yohender | | Aguirre Franklin |</a></div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+               
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static 'js/jquery-1.9.1.min.js' %}"><\/script>')</script>
+        <script type="text/javascript" src="js/fliplightbox.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'js/scrolling-nav.js' %}"></script>
+        <script src="{% static 'js/functions.js' %}"></script>   
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script>wow = new WOW({}).init();</script>
+        <script src="{% static 'contactform/contactform.js' %}"></script>  
+
+    </body>
+</html>
+{% endblock %}

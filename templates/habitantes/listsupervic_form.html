@@ -1,0 +1,142 @@
+{% load staticfiles %}
+
+{% block content%}
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="{%static 'js/jquery.js' %}"></script>
+  
+    <script src="{% static 'media/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'media/js/dataTables.bootstrap.min.js' %}"></script>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+
+    <link rel="/static/imgs/shortcut icon" href="{% static 'cssform/assets/img/logos.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    
+
+    <link rel="stylesheet" href="{% static 'cssform/css/bootstrap.minhab.css' %}">
+   
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+</head>
+<body>
+    <div class="content-page-container full-reset custom-scroll-containers">
+     <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <nav class="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+                  <figure>
+                   <img src="{% static 'cssform/assets/img/grupo (1).png'%}" alt="user-picture" class="img-responsive img-circle center-box">
+                </figure>
+                <li style="color:#fff; cursor:default;">
+                    <span class="all-tittles">{%if user.is_authenticated %} {{user.username}}{%endif%}</span>
+                </li>
+                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
+                    <i class="zmdi zmdi-search"></i>
+                </li>
+                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                </li>
+       <li class="dropdown">
+         <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado de donacion </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="/listado_donaciones/"><span class="zmdi zmdi-mail-send"></span> listado de donaciones</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_supervicion/"><span class="zmdi zmdi-mail-send"></span> listado de supervicion</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_entrega/"><span class="zmdi zmdi-mail-send"></span> listado de entrega</a></li>
+         </ul>
+        </li>
+       <li class="dropdown">
+       <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado  de habitante </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+         <ul class="dropdown-menu">
+            <li><a href="/listado_habitante/"><span class="zmdi zmdi-mail-send"></span> listado de habitante</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_solicitud/"><span class="zmdi zmdi-mail-send"></span> listado de Solicitud</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_inspeccion/"><span class="zmdi zmdi-mail-send"></span> listado de inspeccion</a></li>
+            <li class="divider"></li>
+            <li><a href="/mostrar_benefici/"><span class="zmdi zmdi-mail-send"></span> listado de beneficio</a></li>
+
+         </ul>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <ul class="list-unstyled text-center list-catalog-container">
+                <li class="list-catalog">Bienvenido al listado de la Supervición </li>
+            </ul
+            </div>
+        </div>
+        <div class="conteiner-fluid">
+        </div>
+        <div class="container-fluid"  style="margin: 50px 0;">
+        <div class="col-sm-0 col-sm-offset-0">
+        <div class="container-fluid" style="margin: 0 0 -48px 0;">
+                </div>
+            </div>
+        </div>
+  <br><br>
+<div class="container">
+<h1></h1>
+<table class="table table-striped table-bordered table-hover" id="mydata">
+  <thead>
+   <tr>
+      <td class="active">Cedula del Ing</td>
+      <td class="active">Apellidos del Ing</td>
+      <td class="active">Nombres del Ing</td>
+      <td class="active">Cedula del Voc</td>
+      <td class="active">Apellidos del Voc</td>
+      <td class="active">Nombres del Voc</td>
+      <td class="active">Lugar de entrega</td>
+      <td class="active">Cantidad</td>
+      <td class="active">Fecha</td>
+      
+   </tr>
+  </thead>
+  <tbody>
+    {% for supervicion in queryset%}
+    <tr>
+      <td class="active">{{supervicion.cedula_ing_sup_do}}</td>
+      <td class="active">{{supervicion.apellidos_ing_sup_do}}</td>
+      <td class="active">{{supervicion.nombres_ing_sup_do}}</td>
+      <td class="active">{{supervicion.cedula_voc_sup_do}}</td>
+      <td class="active">{{supervicion.apellidos_voc_sup_do}}</td>
+      <td class="active">{{supervicion.nombres_voc_sup_do}}</td>
+      <td class="active">{{supervicion.lugar_entre}}</td>
+      <td class="active">{{supervicion.cantida_bene}}</td>
+      <td class="active">{{supervicion.fecha_super}}</td>
+      
+    </tr>
+    {% endfor %}
+
+  </tbody> 
+</table>
+</div>
+<script>
+$('#mydata').dataTable();
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+<script src="{% static 'cssform/js/modernizr.js' %}"></script>
+<script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+<script src="{% static 'cssform/js/main.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+
+{% endblock content %}

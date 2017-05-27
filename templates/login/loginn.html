@@ -1,0 +1,60 @@
+{% load staticfiles %}
+
+{% block block %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Inicio de sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+    <link rel="/static/imgs/shortcut icon" href="{% static 'img/logo/venezuela.jpg' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cssform/css/login.css' %}"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js' %}"></script>
+
+    <script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js '%}"><\/script>')</script>
+    <script src="{% static 'cssform/js/modernizr.js' %}"></script>
+    <script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'cssform/js/main.js' %}"></script>
+</head>
+<body class="full-cover-background" style="background-image:url({% static 'img/logo/mapa_nuevas_brisas.png' %})">
+    <div class="form-container">
+        <p class="text-center" style="margin-top: 17px;">
+           <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>
+       </p>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">inicia sesión con tu cuenta</h4>
+       <form class="form-horizontal" method='POST'>{% csrf_token %}
+     {{form.as_tb}}
+      <div class="group-material-login">
+      <p><td><font size="3" align="center"><input class="material-login-control" id="id_username" maxlength="254" name="username" type="text" required="" >
+      <span class="highlight-login"></span>
+      <span class="bar-login"></span>
+      
+      <label><i class="zmdi zmdi-account"></i> &nbsp; Nombre de usuario:</label></div>
+      <div class="group-material-login">
+      <p><td><font size="3" align="center"><input class="material-login-control" id="id_password" name="password" type="password"  required="">
+      <span class="highlight-login"></span>
+      <span class="bar-login"></span>
+     
+      <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña:</label>    
+    </div>
+    <button class="btn-login" type="submit">Ingresar al sistema &nbsp; <i class="zmdi zmdi-mail-send"></i></button>
+    <button class="btn-loginn" type="">Crear cuenta&nbsp; <i class="zmdi zmdi-account-o"></i></button>
+
+{% if form.errors %}
+<label><h6 class="errornote" style="font-size: 19px; color: #e21919;;">Por favor, introduzca un nombre de usuario y clave correctos. Observe que ambos campos pueden ser sensibles a mayúsculas.</label></h6> 
+{% endif %}         
+</div>  
+</body>
+</html>
+
+{% endblock %}
+      
+

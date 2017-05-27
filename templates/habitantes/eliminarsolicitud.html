@@ -1,0 +1,118 @@
+{% load staticfiles %}
+
+{% block content%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>listado de beneficiariorios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+
+    <link rel="/static/imgs/shortcut icon" href="{% static 'cssform/assets/img/logos.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    
+
+    <link rel="stylesheet" href="{% static 'cssform/css/bootstrap.minbene.css' %}">
+   
+    <link rel="stylesheet" href="{% static 'media/css/dataTables.bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+</head>
+<body>
+    <div class="content-page-container full-reset custom-scroll-containers">
+     <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <nav class="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+                  <figure>
+                   <img src="{% static 'cssform/assets/img/grupo (1).png'%}" alt="user-picture" class="img-responsive img-circle center-box">
+                </figure>
+                <li style="color:#fff; cursor:default;">
+                    <span class="all-tittles">{%if user.is_authenticated %} {{user.username}}{%endif%}</span>
+                </li>
+                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
+                    <i class="zmdi zmdi-search"></i>
+                </li>
+                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                </li>
+       <li class="dropdown">
+         <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado de donacion </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="/listado_donaciones/"><span class="zmdi zmdi-mail-send"></span> listado de donaciones</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_supervicion/"><span class="zmdi zmdi-mail-send"></span> listado de supervicion</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_entrega/"><span class="zmdi zmdi-mail-send"></span> listado de entrega</a></li>
+         </ul>
+        </li>
+       <li class="dropdown">
+       <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado  de habitante </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+         <ul class="dropdown-menu">
+            <li><a href="/listado_habitante/"><span class="zmdi zmdi-mail-send"></span> listado de habitante</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_solicitud/"><span class="zmdi zmdi-mail-send"></span> listado de Solicitud</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_inspeccion/"><span class="zmdi zmdi-mail-send"></span> listado de inspeccion</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_beneficiario/"><span class="zmdi zmdi-mail-send"></span> listado de beneficio</a></li>
+
+         </ul>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <ul class="list-unstyled text-center list-catalog-container">
+                <li class="list-catalog">Bienvenido al listado de los Beneficios</li>
+            </ul
+            </div>
+        </div>
+        <div class="conteiner-fluid">
+        </div>
+        
+<div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore dignissimos qui molestias ipsum officiis unde aliquid consequatur, accusamus delectus asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi mollitia corporis iusto.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
+                </div>
+            </div>
+          </div>
+        </div>
+         </div>
+        </div>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+<script src="{% static 'cssform/js/modernizr.js' %}"></script>
+<script src="{% static 'media/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'media/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'cssform/js/http://code.jquery.com/jquery-latest.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+<script src="{% static 'cssform/js/main.js' %}"></script>
+<script>
+$('#mydata').dataTable();
+</script>
+</body>
+</html>
+{% endblock content%}

@@ -1,0 +1,180 @@
+* {
+   box-sizing: border-box; 
+}
+
+body {
+    margin: 0; 
+}
+
+p {
+    text-align: center;
+}
+
+.form-register {
+    width: 95%;
+    max-width: 500px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 7px;
+}
+
+.form-titulo {
+    background: #a01818;
+    color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    font-weight: 100;
+    margin-top: -88px;
+    font-size: 30px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 5px solid #417690;
+}
+
+.contenedor-input {
+    padding: 10px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+}
+
+.input-48 {
+    width: 48%;
+    margin-left: 243px;
+    margin-top: -70px;
+}
+.input-53 {
+    width: 48%;
+    margin-right: 112px;
+    margin-top: 1px;
+    
+}
+
+.input-52 {
+    width: 43%;
+    margin-left: 255px;
+    margin-top: -68px;
+}
+
+.input-51 {
+    width: 48%;
+    margin-left: 249px;
+    margin-top: -68px;
+}
+
+.input-49 {
+    width: 49%;
+    margin-right: 149px;
+    margin-top: 1px;
+}
+.input-50 {
+    width: 49%;
+    margin-left: 244px;
+    margin-top: -69px;
+}
+.input-100 {
+    width: 100%;
+    margin-top: -2px;
+
+}
+
+input[type="submit"] {
+    background: #a01818;
+    color: #f3f3f3;
+    margin: auto;
+    padding: 15px 35px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type="submit"]:active {
+    transform: scale(1.05);
+}
+
+
+
+.form-link {
+    width: 100%;
+    margin: 7px;
+    font-size: 14px;
+    color: #E9E9E9;
+}
+
+a {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+
+user agent stylesheet
+select:not([size]):not([multiple]), select[size="0"], select[size="10"] {
+    background-color: buttonface;
+}
+user agent stylesheet
+keygen, select, select[size="0"], select[size="1"] {
+    border-radius: 0px;
+    border-color: #fff;
+}
+user agent stylesheet
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+user agent stylesheet
+select {
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+}
+user agent stylesheet
+keygen, select {
+    border-radius: 5px;
+}
+user agent stylesheet
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    font: 13.3333px Arial;
+}
+user agent stylesheet
+input, textarea, keygen, select, button, meter, progress {
+    width: 48%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+    background-color: #fff;
+    -webkit-writing-mode: horizontal-tb;
+}
+select {
+    -webkit-appearance: menulist;
+    margin-right: 123px;
+}

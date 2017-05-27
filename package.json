@@ -1,0 +1,19 @@
+{
+  "name": "SisconcBNB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "browserify": "^14.3.0"
+    "start": "browserify ./static/cssform/js/selects.js > ./static/cssform/js/bundle/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.3.0"
+  }
+}

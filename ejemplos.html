@@ -1,0 +1,103 @@
+{% load staticfiles %}
+
+{% block extrahead%}
+
+<title>Sisconc BNB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+    <link rel="/static/imgs/shortcut icon" href="{% static 'cssform/assets/img/logos.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'media/css/dataTables.bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/main.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/baseshabitante.css' %}">
+
+<div class="navbar-lateral full-reset">
+        <div class="visible-xs font-movile-menu mobile-menu-button"></div>
+        <div class="full-reset container-menu-movile custom-scroll-containers">
+            <div class="logo full-reset all-tittles">
+                <i class="visible-xs zmdi zmdi-close-circle pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
+                Sisconc BNB
+            </div>
+             <div class="full-reset" style="background-color:#113452; padding: 10px 0;color:#fff;">
+            <figure>
+                    <img src="{%  static 'cssform/assets/img/018-people-57.png'%}" alt="universidad" class="img-responsive center-box " style="width:55%;">
+                </figure >
+            <div class="text-center">
+                <p class="text-center" style="padding-top: 2px;    margin-left: 5px;navbar-user-status-online">Online  {%if user.is_authenticated %} {{user.username}}{%endif%}</p>
+             <div class="navbar-user-status-online"></div>
+            </div>
+            </div>
+            <div class="full-reset nav-lateral-list-menu">
+                <ul class="list-unstyled">
+
+                    {% if request.user.is_habitante %}
+                        <li>
+                         <div class="dropdown-menu-button"><a><i class="zmdi zmdi-accounts-list zmdi-hc-fw"></i>&nbsp;&nbsp;Añadir las cartas del Habitante<i class="zmdi zmdi-arrows pull-right zmdi-hc-fw"></i></a></div>
+                        </li>
+                    {% endif %}
+
+                    {% if request.user.is_habitante or request.user.is_vocero%}
+                        <li><a href="/solicitud/"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i >&nbsp;&nbsp; Añadir Solicitud<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                    {%endif%}
+
+                   <li><a href="/iniciohab/"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+
+                </ul>    
+            </div>
+        </div>
+    </div>
+  <div class="content-page-container full-reset custom-scroll-containers">
+      <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <nav ass="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+             <figure>
+                   <img src="{% static 'cssform/assets/img/018-people-57.png'%}" alt="user-picture" class="img-responsive img-circle center-box">
+                </figure>
+                 <li style="color:#fff; cursor:default;">
+                    <span class="all-tittles" style=" color: #fff;
+                     ">{%if user.is_authenticated %} {{user.username}}{%endif%}</span>
+                </li>
+                <li  class="tooltips-general exit-system-button" data-href="/" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                </li>
+                <li class="mobile-menu-button visible-xs" style="float: left !important;">
+                    <i class="zmdi zmdi-menu"></i>
+                </li>
+            </ul>
+        </nav>
+
+{% endblock %}
+  <meta charset="UTF-8"></head>
+<body>
+
+{% block context%}
+
+{% endblock %}
+
+{% block js%}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+<script src="{% static 'cssform/js/modernizr.js' %}"></script>
+<script src="{% static 'media/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'media/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'cssform/js/http://code.jquery.com/jquery-latest.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+<script src="{% static 'cssform/js/main.js' %}"></script>
+<script src="{% static 'cssform/js/bundle/app.js' %}"></script>
+{% endblock %}
+</body>
+</html>
+

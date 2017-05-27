@@ -1,0 +1,223 @@
+{% load staticfiles %}
+
+{% block content%}
+    <html lang="es">
+<head>
+    
+    <title>Sisconc BNB</title>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+
+    <link rel="/static/imgs/shortcut icon" href="{% static 'cssform/assets/img/logos.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'media/css/dataTables.bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/main.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+    
+   <link rel="stylesheet" href="{% static 'cssform/css/basesseccion.css' %}">    </head>
+ </head>
+<body>
+     <div class="navbar-lateral full-reset">
+        <div class="visible-xs font-movile-menu mobile-menu-button"></div>
+        <div class="full-reset container-menu-movile custom-scroll-containers">
+            <div class="logo full-reset all-tittles">
+                <i class="visible-xs zmdi zmdi-close-circle  pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
+                   Sisconc BNB
+            </div>
+             <div class="full-reset" style="background-color:#113452; padding: 10px 0;color:#fff;">
+                 <figure>
+                    <img src="{% static 'cssform/assets/img/iconos_usuario4.png'%}" alt="universidad" class="img-responsive center-box " style="width:55%;">
+                </figure >
+            <div class="text-center">
+                <p class="text-center" style="padding-top: 2px;    margin-left: 5px;navbar-user-status-online"> Online  {%if user.is_authenticated %} {{user.username}}{%endif%}</p>
+             <div class="navbar-user-status-online"></div>
+            </div>
+            </div>
+            <div class="full-reset nav-lateral-list-menu">
+                <ul class="list-unstyled">
+                    <li><a href="/inicioalum/"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                    <li>
+                        <div class="dropdown-menu-button"><a><i class="zmdi zmdi-accounts-add  zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir Registros del Alumnos<i class="zmdi zmdi-arrows pull-right zmdi-hc-fw"></i></a></div>
+                        <ul class="list-unstyled">
+                            
+                            <li><a href="/representante/"><i class="zmdi zmdi-accounts-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir Representante<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                            <li><a href="/alumno/"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp;Añadir Alumnos<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                            <li><a href="/inscripcion/"><i class="zmdi zmdi-local-library zmdi-hc-fw"></i>&nbsp;&nbsp;Añadir Inscripcion <i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                        </ul>
+                    </li>
+                    <li ><div class="dropdown-menu-button"><a><i class="zmdi zmdi-local-hospital zmdi-hc-fw"></i>&nbsp;&nbsp;Añadir Registros Enfermedad<i class="zmdi zmdi-arrows pull-right zmdi-hc-fw"></a></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="/enfermedad/"><i class="zmdi zmdi-local-hospital zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir Enfermedad<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                            <li><a href="/enfermedalum/"><i class="zmdi zmdi-local-hospital zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir Enfermedad alumnos<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdown-menu-button"><a><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>&nbsp;&nbsp;Añadir el Registros Pofesor<i class="zmdi zmdi-arrows pull-right zmdi-hc-fw"></a></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="/profesor/"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir el profesor<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                            <li><a href="/seccion/"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir el seccion<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                            <li><a href="/seccionprof/"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i>&nbsp;&nbsp; Añadir el seccion profesor<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdown-menu-button"><a><i class="zmdi zmdi-accounts-list-alt zmdi-hc-fw"></i>&nbsp;&nbsp;Listado del Registros<i class="zmdi zmdi-arrows pull-right zmdi-hc-fw"></i></a></div>
+                        <ul class="list-unstyled">
+                        <li><a href="/listado_de_representante/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Representante <i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_alumno/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Alumnos<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                        <li><a href="/listado_inscripcion/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Inscripcion<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_enfermedad/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Enfermedad<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_enfermedadal/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Enfermedad Alumno<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_profesor/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Profesor<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_seccion/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Seccion<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+
+                        <li><a href="/listado_seccionprof/"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp;Lista de Seccion del profesor<i class="zmdi zmdi-arrow-back pull-right zmdi-hc-fw"></a></li></i>
+                            
+                        </ul>
+                    </li>
+                 <li>  
+            </div>
+        </div>
+    </div>
+    <div class="content-page-container full-reset custom-scroll-containers">
+      <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <nav class="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+             <figure>
+                   <img src="{% static 'cssform/assets/img/iconos_usuario4.png'%}" alt="user-picture" class="img-responsive img-circle center-box">
+                </figure>
+                <li style="color:#fff; cursor:default;">
+                    <span class="all-tittles" style=" color: #fff;
+                     ">{%if user.is_authenticated %} {{user.username}}{%endif%}</span>
+                </li>
+                <li  class="tooltips-general exit-system-button" data-href="/" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                </li>
+                <li class="mobile-menu-button visible-xs" style="float: left !important;">
+                    <i class="zmdi zmdi-menu"></i>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles" style=" margin-left: 183px;">Registro de Seccion</small></h1>
+            </div>
+        </div>
+        <div class="container-fluid"  style="margin: 50px 0;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <img src="{% static 'cssform/assets/img/016-people-59.png' %}" alt="user" class="img-responsive center-box" style="max-width: 85px;margin-top: -163px;margin-left: 627px;">
+
+
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+                    Bienvenido a la sección para  añadir el seccion debe llenar los siguientes campos: 
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 lead">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container-flat-form">
+                <div class="title-flat-form title-flat-blue">Añadir la Seccion</div>
+        <div class="row">
+ <div class="group-material"><form class="form-horizontal" method='POST'>{% csrf_token %}{{form.as_tb}}
+<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+{% if form.errors %} 
+    <p class="errornote" style="
+    color: rgb(241, 6, 26)"; >° Vefique que los campos esten llenos</p> 
+{% endif %} 
+
+<div class="form-group col-sm-6"style="margin-left: -214px;margin-top: 99px;">
+<label style="margin-left: 183px;margin-top: -103px;">Turno </label>
+<td><font size="3" align="center">{{form.turno}}</font></td></div> 
+
+<div class="form-group col-sm-6"style="margin-left:126px;margin-top: 99px;">
+<label style="margin-left: 183px;margin-top: -103px;">Seccion</label>
+<td><font size="3" align="center">{{form.seccion}}</font></td></div> 
+
+<div class="form-group col-sm-6"style="margin-left: -544px;margin-top: 186px;">
+<label style="margin-left: 183px;margin-top: -103px;">Grado </label>
+<td><font size="3" align="center">{{form.grado}}</font></td></div> 
+
+
+
+
+
+<p class="text-center"> 
+<button class="tooltips-general btn btn-info" href="" data-placement="bottom" title="" data-original-title="Nuevo" s>
+<i class="zmdi zmdi-comments"></button></i>
+
+<button class="tooltips-general btn btn-success " href="" data-placement="bottom" title="" data-original-title="Guardar" style="margin-left: -28px;">
+<i class="zmdi zmdi-save" ></button></i>
+
+<button class="tooltips-general btn btn-warning" href="" data-placement="bottom" title="" data-original-title="siguiente" style="margin-left: -27px;">
+<i class="zmdi zmdi-close-circle-o"></button></i>
+</div></div></div></div></div>
+<div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore dignissimos qui molestias ipsum officiis unde aliquid consequatur, accusamus delectus asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi mollitia corporis iusto.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer full-reset">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <h4 class="all-tittles"></h4>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright full-reset all-tittles">
+            © Programadores | | U.P.T.P .J.J "Montilla"|</c></maquee>| Gonzalez Jasnelvi | | Becerra Yohender | | Aguirre Franklin | Version 1.0.1</div>
+        </footer>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+<script src="{% static 'cssform/js/modernizr.js' %}"></script>
+<script src="{% static 'media/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'media/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'cssform/js/http://code.jquery.com/jquery-latest.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+<script src="{% static 'cssform/js/main.js' %}"></script>
+<script>
+{% endblock content%}

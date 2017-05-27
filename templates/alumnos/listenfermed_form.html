@@ -1,0 +1,185 @@
+{% load staticfiles %}
+
+{% block content%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>listado de enfermedad</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/sweet-alert.css' %}">
+
+    <link rel="/static/imgs/shortcut icon" href="{% static 'cssform/assets/img/logos.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/normalize.css' %}">
+    
+
+    <link rel="stylesheet" href="{% static 'cssform/css/bootstrap.minenfer.css' %}">
+   
+    
+    <link rel="stylesheet" href="{% static 'cssform/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssform/css/jquery.mCustomScrollbar.css' %}">
+</head>
+<body>
+    <div class="content-page-container full-reset custom-scroll-containers">
+     <img src="{% static 'img/logo/centillounico.png' %}" style="max-width: 100%;width:100%; height: 50px;">
+        <nav class="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+                  <figure>
+                   <img src="{% static 'cssform/assets/img/grupo (1).png'%}" alt="user-picture" class="img-responsive img-circle center-box">
+                </figure>
+                <li style="color:#fff; cursor:default;">
+                    <span class="all-tittles">{%if user.is_authenticated %} {{user.username}}{%endif%}</span>
+                </li>
+                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
+                    <i class="zmdi zmdi-search"></i>
+                </li>
+                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                </li>
+       <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado  de profesor </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="/listado_profesor/"><span class="zmdi zmdi-mail-send"></span> listado de profesor</a></li>
+            <li class="divider"></li>
+             <li><a href="/listado_seccion/"><span class="zmdi zmdi-mail-send"></span> listado de seccion </a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_seccionprof/"><span class="zmdi zmdi-mail-send"></span> listado de seccion profesor</a></li>
+
+        </ul>
+        </li>
+       <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado de enfermedad </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="/listado_enfermedad/"><span class="zmdi zmdi-mail-send"></span> listado de enfermedad</a></li>
+            <li class="divider"></li>
+            <li><a href="/listado_enfermedadal/"><span class="zmdi zmdi-mail-send"></span> listado de enfermedad alumno</a></li>
+         </ul>
+                </li>
+       <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="zmdi zmdi-eye"></span>  
+           Listado de alumno </span><b class="zmdi zmdi-caret-down-circle"></b></a>
+        <ul class="dropdown-menu">
+              <li><a href="/listado_de_representante/"><span class="zmdi zmdi-mail-send"></span> listado de representante</a></li>
+             <li class="divider"></li>
+            <li><a href="/listado_alumno/"><span class="zmdi zmdi-mail-send"></span> listado de alumno</a></li>
+             <li class="divider"></li>
+             <li><a href="/listado_inscripcion/"><span class="zmdi zmdi-mail-send"></span> listado de inscripcion</a></li>
+        </ul>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <ul class="list-unstyled text-center list-catalog-container">
+                <li class="list-catalog">Bienvenido a listado de enfermedad </li>
+            </ul
+            </div>
+        </div>
+        <div class="conteiner-fluid">
+        </div>
+        <div class="container-fluid"  style="margin: 50px 0;">
+        <div class="col-sm-0 col-sm-offset-0">
+        <div class="container-fluid" style="margin: 0 0 -48px 0;">
+        <form method="GET" action="" class="pull-right" style="width: 30% !important;" autocomplete="off">
+         <div class="group-material">
+            <input  type="search" data-toggle="tooltip" data-placement="top" title=" Por favor escribe la fecha de inscripcion"  name='q' value='{{ request.GET.q }}'" style="display: inline-block !important; width: 70%; margin-left: -395px" class="material-control tooltips-general" placeholder="Buscar " maxlength="50" data-toggle="tooltip" data-placement="top">
+                    <button class="btn"  style="margin: 0; height: 43px; background-color: transparent !important;">
+                        <i class="zmdi zmdi-search"  style="font-size: 25px; color: #31708f;"></i>
+                    </button>
+                    <button  type="submit" class="btn" onclick="javascript:window.print()" / style="margin: 0; height: 43px; background-color: transparent !important; ">
+                        <i class="zmdi zmdi-local-printshop" style="font-size: 34px;color: #31708f;"  ></i> 
+                    </button>
+                 <a class="btn btn-info " href="/enfermedad/" role="button" title="" data-original-title="Atras">Añadir enfermedad <i class="zmdi zmdi-collection-add"></i></button></a>
+                
+                <button  type="submit" class="btn btn-success" onclick="window.open('//')">
+                        <i class="zmdi zmdi-collection-pdf" style="font-size: 34px;color: #31708f;"  ></i> 
+                 </button>
+        
+
+                </div>
+            </div>
+        </div>
+      <table class="table table-striped  table-bordered  table-hover table-condensed"> 
+ <div class="row">
+   <div id="content-main">
+         <thead>
+                <thead>
+                <td class="active"><h6><label>#</label></h6></td>
+                <td class="active"><h6><label>Código</label></h6></td>
+                <td class="active"><h6><label>Nombre de la enfermedad</label></h6></td>
+                <td class="active"><h6><label>Descripción</label></h6></td>
+                <td class="active"><h6><label>Actualizar</label></h6></td>
+            </thead>
+            <tbody>
+                {% if object_list %}       
+                {% for Enfermedad in object_list %}
+                <tr>
+                   <td class="active"><h6>{{Enfermedad.id }}</h6></td>
+                   <td class="active"><h6>{{Enfermedad.codigo_enfermedad }}</h6></td>
+                   <td class="active"><h6>{{Enfermedad.nombres_enfermedad }}</h6></td>
+                   <td class="active"><h6>{{Enfermedad.descripcion_enfermedad }}</h6><td class="active"><h6>
+                  <div class="group-material">
+                   <a   class="btn btn-primary"  href="{% url 'alumno:editarenf' Enfermedad.id %}" class=" data-toggle=" tooltip" data-placement="top" title=" modificar su datos" ><span class="zmdi zmdi-refresh"></span></a>
+                    </tr>
+                {% endfor %}
+                {%  else  %}
+                <h1>Enfermedad no Encontrada</h1>
+                {% endif %}
+                </tbody>
+            </table>
+            </thead>
+ <ul class="pager">
+<samp class="current">
+        pagina {{ object_list.number }}/{{object_list.paginator.num_pages }}
+</samp>
+    <li>
+        {% if object_list.has_previous %}
+        <a href="?page={{object_list.previous_page_number}}"><i class="zmdi zmdi-arrow-back"></a></i>
+        {% endif %}
+  </li>
+      <li>
+        {% if object_list.has_next %}
+        <a href="?page={{  object_list.next_page_number}}"><span class="zmdi zmdi-arrow-forward"></span></a>
+        {% endif %}  
+    </li>  
+</ul>   
+<div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore dignissimos qui molestias ipsum officiis unde aliquid consequatur, accusamus delectus asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi mollitia corporis iusto.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
+                </div>
+            </div>
+          </div>
+        </div>
+         </div>
+        </div>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'cssform/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+<script src="{% static 'cssform/js/modernizr.js' %}"></script>
+<script src="{% static 'cssform/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cssform/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+<script src="{% static 'cssform/js/main.js' %}"></script>
+<script src="{% static 'cssform/js/sweet-alert.min.js' %}"></script>
+</body>
+</html>
+{% endblock content%}

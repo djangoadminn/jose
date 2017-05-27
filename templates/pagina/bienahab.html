@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block context%}
+<title>Sisconc BNB</title>
+<div class="container-fluid">
+        <div class="container">
+            <div class="page-header">
+                <article class="col-md-199"><p>
+<font color="#337ab7"><h1><center style="
+    margin-left: -241px;"><span>"Bienvenido{%if user.is_authenticated %}
+      Usuario:  ({{user.username}})"</h1></font></center></span></font>  
+       {%endif%} 
+            </div>
+        </div>
+        </section>
+          <div class="container-flat-form">
+         <font color="#337ab7"><h2 style="font-size: 32px;"><center><label>Registros de los Habitantes nbspy Control de Donaciones de los Consejos Comunales del Barrio Nuevas Brisas.</h2></font></center></label></font></div>
+{% endblock %}
+{% block  footer%}
+{% endblock %}

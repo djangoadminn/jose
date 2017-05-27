@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+{% block block %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Funda Comunal | incio</title>
+<link href="{% static 'csslogin/img/venezuela.jpg' %}">
+<link rel="/static/imgs/shortcut icon" href="{% static 'img/logo/venezuela.jpg' %}">
+<link href="{% static 'csslogin/css/font-awesome.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'csslogin/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'csslogin/css/animate.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'csslogin/css/admin.css' %}" rel="stylesheet" type="text/css" />
+    <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %} {{ form.as_tb}}
+<body class="light_theme  fixed_header left_nav_fixed">
+<div class="wrapper">
+
+ <div class="login_page">
+  <div class="login_content">
+  <div class="panel-heading border login_heading">Bienvenidos:</div> 
+ <form role="form" class="form-horizontal">
+
+  <tr>
+  <td><font size="4" align="center"><label class=""><label for="id_password" style="margin-top: -50px; margin-bottom: 9px;margin-left: -12px; margin-right: 4%;"><span class="glyphicon glyphicon-user"></span> Usuario:</label><input class=" form-control" id="id_username" maxlength="54" required="por favor rellene" name="username" type="text" autocomplete="off"></td>
+  <tr>
+<td><font size="4" align="center"><label><label for="id_password"style=" margin-top: -50px;  margin-left: -12px; margin-right: 4%;"><span class="glyphicon glyphicon-eye-open"></span>  Contraseña:</label><input class=" form-control" id="id_password" name="password" required="por favor rellene" type="password" autocomplete="off">
+</td>
+<tr><td><button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-off"></span></a></button></tr><td>
+   </form>
+
+{% if form.errors %}
+<label><h6>Por favor, introduzca un nombre de usuario y clave correctos. Observe que ambos campos pueden ser sensibles a mayúsculas.</label></h6>
+{% endif %} 
+ </div>
+  </div>
+
+  
+
+<script src="{% static 'csslogin/js/jquery-2.1.0.js' %}"></script>
+<script src="{% static 'csslogin/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'csslogin/js/common-script.js' %}"></script>
+<script src="{% static 'csslogin/js/jquery.slimscroll.min.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}
